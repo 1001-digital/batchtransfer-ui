@@ -1,0 +1,15 @@
+.hidden-sm {
+  display: none;
+
+  @media (--md) {
+    display: initial;
+  }
+}
+
+.visible-sm {
+  display: initial;
+
+  @media (--md) {
+    display: none;
+  }
+}
