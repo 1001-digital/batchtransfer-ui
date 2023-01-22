@@ -1,7 +1,9 @@
 <template>
   <main>
-    <header>
+    <header class="action fit">
       <h1>NFT Bulk Transfer</h1>
+
+      <Connect />
     </header>
 
     <section class="fit">
@@ -25,6 +27,7 @@
 
 <script setup>
 import ApproveCollection from './components/ApproveCollection.vue'
+import Connect from './components/Connect.vue'
 import ChooseTokens from './components/ChooseTokens.vue'
 import ExecuteTransfer from './components/ExecuteTransfer.vue'
 </script>

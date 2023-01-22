@@ -1,5 +1,11 @@
 import { createApp } from 'vue'
-import './styles/index.css'
+import { VagmiPlugin } from 'vagmi'
 import App from './App.vue'
+import { client } from './helpers/ethereum'
+import './styles/index.css'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+
+app.use(VagmiPlugin(client))
+
+app.mount('#app')
