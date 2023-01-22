@@ -43,7 +43,7 @@ import ChooseTokens from './components/ChooseTokens.vue'
 import ExecuteTransfer from './components/ExecuteTransfer.vue'
 
 const tokenPairs = ref([[], [], [], [], []])
-const collectionAddress = ref('0xc6f24005e2bE8077f791529cBECEfcA1c7292842')
+const collectionAddress = ref('')
 </script>
 
 <style lang="postcss">
