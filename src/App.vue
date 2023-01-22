@@ -7,14 +7,24 @@
     </header>
 
     <section class="fit">
-      <input type="text" placeholder="Collection Contract (e.g. 0xc6f24005e2be8077...)">
+      <input
+        v-model="collectionAddress"
+        type="text"
+        placeholder="Collection Contract (e.g. 0xc6f24005e2be8077...)"
+      />
     </section>
 
-    <ApproveCollection />
+    <ApproveCollection :collection="collectionAddress" />
 
-    <ChooseTokens />
+    <ChooseTokens
+      :tokens="tokenPairs"
+      @update="$event => tokenPairs = $event"
+    />
 
-    <ExecuteTransfer />
+    <ExecuteTransfer
+      :collection="collectionAddress"
+      :tokens="tokenPairs"
+    />
 
     <footer>
       <a
@@ -26,10 +36,14 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import ApproveCollection from './components/ApproveCollection.vue'
 import Connect from './components/Connect.vue'
 import ChooseTokens from './components/ChooseTokens.vue'
 import ExecuteTransfer from './components/ExecuteTransfer.vue'
+
+const tokenPairs = ref([[], [], [], [], []])
+const collectionAddress = ref('0xc6f24005e2bE8077f791529cBECEfcA1c7292842')
 </script>
 
 <style lang="postcss">

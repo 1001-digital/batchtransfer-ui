@@ -4,7 +4,7 @@
 
     <div class="tokens">
       <div
-        v-for="(row, index) in pairs"
+        v-for="(row, index) in props.tokens"
         :key="index"
         class="row"
       >
@@ -14,7 +14,7 @@
           @click="removeRow(index)"
           class="simple"
           title="Remove"
-          :disabled="pairs.length <= 1"
+          :disabled="props.tokens.length <= 1"
         ><X /></button>
       </div>
 
@@ -24,22 +24,25 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import X from './icons/X.vue'
 
-const pairs = ref([[], [], [], [], []])
+const props = defineProps({
+  tokens: Array,
+})
 
-const addRow = () => pairs.value.push([])
+const emit = defineEmits(['update'])
+
+const addRow = () => emit('update', [...props.tokens, []])
 const removeRow = index => {
-  if (pairs.value.length === 1) return
-  pairs.value.splice(index, 1)
+  if (props.tokens.length === 1) return
+  const tokens = [...props.tokens]
+  tokens.splice(index, 1)
+
+  emit('update', tokens)
 }
 </script>
 
 <style lang="postcss" scoped>
-  .tokens {
-  }
-
   .row {
     margin: var(--size-4) 0;
     display: grid;
