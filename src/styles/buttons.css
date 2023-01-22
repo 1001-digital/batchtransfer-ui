@@ -1,0 +1,21 @@
+button {
+  display: block;
+  text-align: center;
+
+  &:--highlight {
+    outline: none;
+  }
+
+  &[disabled],
+  &[disabled=true] {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: normal;
+  }
+
+  &:not(.simple) {
+    padding: var(--size-3) var(--size-4);
+    background: var(--gray-0);
+    color: var(--gray-1000);
+  }
+}

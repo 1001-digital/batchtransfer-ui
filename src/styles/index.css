@@ -2,6 +2,8 @@
 @import "./normalize.css";
 
 @import "./utilities.css";
+@import "./inputs.css";
+@import "./buttons.css";
 
 :root {
   font-family: Space Mono, Inter, Avenir, Helvetica, Arial, sans-serif;

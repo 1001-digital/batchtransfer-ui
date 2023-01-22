@@ -1,0 +1,15 @@
+input {
+  background-color: var(--gray-800);
+  padding: var(--size-4) var(--size-5);
+  outline: 0;
+  width: 100%;
+  display: block;
+
+  &::placeholder {
+    color: var(--gray-300);
+  }
+
+  &:--highlight {
+    background-color: var(--gray-800);
+  }
+}
