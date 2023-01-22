@@ -1,6 +1,8 @@
-# Vue 3 + Vite
+# BatchTransfer UI
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is a simple frontend for the [NFT BatchTransfer Smart Contract](https://etherscan.io/address/0x055c942A5396460f0d36295bEd65436cd970Aa11#code).
+
+Read the [Backstory (Twitter)](https://twitter.com/jalil_eth/status/1616919632622878720).
 
 ## Recommended IDE Setup
 
