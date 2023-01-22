@@ -1,3 +1,4 @@
+textarea,
 input {
   background-color: var(--gray-800);
   padding: var(--size-4) var(--size-5);
@@ -10,6 +11,10 @@ input {
   }
 
   &:--highlight {
-    background-color: var(--gray-800);
+    background-color: var(--gray-600);
   }
+}
+
+textarea {
+
 }

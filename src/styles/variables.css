@@ -28,5 +28,6 @@
 
   --content-width: 50rem;
 
+  --speed-fast: 0.15s;
   --speed: 0.3s;
 }

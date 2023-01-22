@@ -2,13 +2,15 @@
   <section>
     <h1>2. Choose Tokens</h1>
 
+    <BulkAddressImport @parsed="onImport" />
+
     <div class="tokens">
       <div
         v-for="(row, index) in props.tokens"
         :key="index"
         class="row"
       >
-        <input type="number" v-model="row[0]" placeholder="Token ID (#123)">
+        <input type="number" v-model="row[0]" :placeholder="`Token ID (#${index + 1})`">
         <input type="text" v-model="row[1]" placeholder="Recipient (0x123...)">
         <button
           @click="removeRow(index)"
@@ -24,6 +26,7 @@
 </template>
 
 <script setup>
+import BulkAddressImport from './BulkAddressImport.vue'
 import X from './icons/X.vue'
 
 const props = defineProps({
@@ -32,6 +35,10 @@ const props = defineProps({
 
 const emit = defineEmits(['update'])
 
+const onImport = addresses => {
+  // TODO: improve this later...
+  emit('update', [...addresses.map(a => [undefined, a])])
+}
 const addRow = () => emit('update', [...props.tokens, []])
 const removeRow = index => {
   if (props.tokens.length === 1) return
